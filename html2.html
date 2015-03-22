@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Duke Supports</title>
+  <script src="//www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+</head>
+
+<body>
+
+  <h1>Duke Supports</h1>
+
+
+
+
+
+
+<script type="text/javascript">
+Parse.initialize("Oq7vsBmsGE2WIzcQMzWJDPTyKmvEjiWLfcqLXJu4", "5rUthWaZu4WcVHtPhJ37ZphcUQDIdh3Fhu043Wsq");
+
+
+var Posters = Parse.Object.extend("Posters");
+var emailers = new Posters();
+var replier = new Parse.Query(Posters);
+
+
+
+	var email;
+	var posts = [];
+
+	function printOut() {
+	email = prompt("What is your email? (If you want people to send uplifting messages to you!)");
+
+		var stuff = document.getElementById('yok').value;
+		
+		posts.push(stuff);
+		emailers.save({
+		if (email.indexOf("@")>-1){
+			person: document.write(email),
+			number: posts.length,
+			post: stuff,
+	}
+	else{
+		person: "not given",
+		number: posts.length,
+		post: stuff,
+	}
+		}
+		})
+		
+		document.getElementById("postArea").innerHTML = stuff;
+
+	}
+
+
+	function sendMail() {	
+	var HavingABadDay="mailto:"+repliers.get(person);	
+    	var link = HavingABadDay
+             + "?subject=" + escape("You can do it!")
+             + "&body=" + escape(document.getElementById('myText').value)
+    ;
+
+    window.location.href = link;
+}
+
+	query.find({
+	success: function(results) {
+	var count = 1;
+		for(i in results){
+		var a = results[i].get('Name');
+		var u = results[i].get('Number');
+		var o = results[i].get('Post');
+
+		$("#hovertable").append(
+            "<tr class=element><td>"
+            +o
+            +"</td>" 
+            +document.getElementById("smilies");
+            +"<td></tr>"
+            +document.getElementById("replies");
+            +"<td></tr>"
+        count++;
+	}
+})
+
+</script>
+
+<div id="Posts">
+  <h1>Posts</h1>
+  <table id="hovertable"></table>
+  <script type="text/javascript" src="js/inventory_parse.js"></script>
+  <br>
+</div>
+
+
+<div id="singlepost">
+	<input type="text" name="chat" placeholder="How are you feeling today?" id= "yok" size = "150"><br>
+	<button id="callprompt" onclick="printOut()">
+	Post!</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="answers">
+	<p id="postArea"></p>
+		
+</div>
+
+
+<div id="replies">
+<textarea id="myText">
+    Lorem ipsum...
+</textarea>
+
+<button onclick="sendMail(); return false">Reply</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="smilies">
+<img id="myImage" onclick="changeImage()" src="pic_circle.gif" width="50" height="50">
+<!--make image more opaque-->
+
+<p>You are not alone!</p>
+
+<script>
+function changeImage() {
+    var image = document.getElementById('myImage');
+    image.src = "pic_smiley.gif";
+}
+</script>
+
+<script type="text/javascript">
+var counter = 0;
+</script>
+</div>
+
+</body>
+
+</html>
+
+
